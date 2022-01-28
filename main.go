@@ -6,11 +6,14 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"strings"
+
+	"github.com/cassio/go-files/api/service"
 )
 
 func main() {
 
-	lerUmAquivo()
+	service.StartServer()
 
 }
 
@@ -62,4 +65,10 @@ func lerUmAquivo() {
 
 	fmt.Println(string(content))
 
+}
+
+func InverterBarra(palavra string) string {
+	BarraInvertidaParaCaminhoWindows := strings.Replace(palavra, "/", "\\", 1)
+	fmt.Print(BarraInvertidaParaCaminhoWindows)
+	return BarraInvertidaParaCaminhoWindows
 }
